@@ -45,6 +45,8 @@ For frontend development, `npm run dev` still starts Vite at port 5173 with a `/
 
 ## Deployment
 
+For a containerized installation, see [Deploy on Coolify](deploy/README.md). The root `Dockerfile` builds the complete app; mount persistent storage at `/data`.
+
 Build one database-module artifact containing the backend, ICS parser, and static Svelte assets:
 
 ```sh
