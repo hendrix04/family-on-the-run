@@ -1,0 +1,23 @@
+[package]
+name = "family-on-the-run"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+spacetimedb = { version = "=2.8.2", features = ["unstable"] }
+chrono-tz = "0.10"
+sha2 = "0.10"
+ical = "0.11"
+rrule = { version = "0.14", default-features = false }
+chrono = { version = "0.4", default-features = false, features = ["std"] }
+url = "2.5"
+
+[profile.release]
+lto = true
+opt-level = "s"
+
+[patch.crates-io]
+rrule = { path = "vendor/rrule" }

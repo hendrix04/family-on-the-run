@@ -1,0 +1,37 @@
+{
+  "name": "family-on-the-run",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "check": "svelte-check --tsconfig ./tsconfig.json && tsc --project scripts/tsconfig.json",
+    "build": "npm run check && vite build",
+    "preview": "vite preview",
+    "backend:start": "node scripts/backend.mjs start",
+    "backend:publish": "node scripts/backend.mjs publish",
+    "backend:generate": "node scripts/backend.mjs generate",
+    "test:integration": "node scripts/integration.mjs",
+    "test:admin": "node scripts/integration.mjs --admin",
+    "test:admin:browser": "node scripts/integration.mjs --admin --browser",
+    "test:browser": "node scripts/browser-check.mjs",
+    "test:calendar": "cargo test --manifest-path spacetimedb/Cargo.toml calendar_parser",
+    "backend:build": "node scripts/backend.mjs build",
+    "test:keyboard": "node scripts/keyboard-check.mjs"
+  },
+  "dependencies": {
+    "fullcalendar": "7.1.1",
+    "spacetimedb": "2.8.2",
+    "temporal-polyfill": "^1.0.1"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@types/node": "^26.6.5",
+    "esbuild": "^0.28.2",
+    "playwright": "^1.64.0",
+    "svelte": "5.57.2",
+    "svelte-check": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  }
+}
